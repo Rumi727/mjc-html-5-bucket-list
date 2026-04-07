@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>버킷리스트 포스트잇 카드</title>
+  <style>
+    body { margin: 0; background: #f5f3eb; }
+
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;500&display=swap');
+
+    .scene {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2.5rem 1rem;
+      min-height: 420px;
+    }
+
+    .card {
+      width: 300px;
+      background: linear-gradient(160deg, #fffde7 0%, #fff9c4 60%, #fff59d 100%);
+      padding: 15px 15px 40px 15px;
+      border-radius: 2px 2px 18px 6px;
+      box-shadow:
+        3px 5px 18px rgba(0,0,0,0.13),
+        0 1px 0 #f0e060 inset;
+      position: relative;
+      font-family: 'Noto Sans KR', sans-serif;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: rotate(-1deg) translateY(-4px);
+      box-shadow: 6px 10px 28px rgba(0,0,0,0.18);
+    }
+
+    /* 테이프 효과 */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 20px;
+      background: rgba(255,255,180,0.55);
+      border: 0.5px solid rgba(220,210,100,0.4);
+      border-radius: 2px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .card h2 {
+      font-family: 'Nanum Pen Script', cursive;
+      color: #4a3b0a;
+      font-size: 1.55rem;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+
+    .card p {
+      font-family: 'Nanum Pen Script', cursive;
+      color: #5c4a1a;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin: 0 0 4px 0;
+    }
+
+    /* ───── 1. 배지 (position: absolute) ───── */
+    .badge {
+      position: absolute;
+      font-size: 1.35rem;
+      line-height: 1;
+      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.15));
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .badge-hot {
+      top: -12px;
+      right: 18px;
+      transform: rotate(12deg);
+      animation: wiggle 2.4s ease-in-out infinite;
+    }
+
+    .badge-day {
+      top: 6px;
+      right: -10px;
+      font-size: 0.92rem;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 500;
+      background: #ff6b35;
+      color: #fff;
+      padding: 3px 7px;
+      border-radius: 20px;
+      box-shadow: 1px 2px 6px rgba(255,107,53,0.35);
+      transform: rotate(4deg);
+      pointer-events: none;
+    }
+
+    .badge-pick {
+      bottom: 14px;
+      right: 14px;
+      transform: rotate(-8deg);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(12deg) scale(1); }
+      40%       { transform: rotate(18deg) scale(1.1); }
+      60%       { transform: rotate(8deg)  scale(1.05); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: rotate(-8deg) scale(1); }
+      50%       { transform: rotate(-8deg) scale(1.15); }
+    }
+
+    /* ───── 2. 비밀 메모 (visibility: hidden → :hover) ───── */
+    .secret-memo {
+      visibility: hidden;
+      position: absolute;
+      bottom: -48px;
+      left: 10px;
+      right: 10px;
+      background: #fffde0;
+      border: 1px dashed #c8b400;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.78rem;
+      font-family: 'Nanum Pen Script', cursive;
+      color: #7a6200;
+      text-align: center;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .card:hover .secret-memo {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .secret-memo::before {
+      content: 'TMI';
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+      color: #b8a000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="card">
+
+    <!-- 배지들 (position: absolute) -->
+    <span class="badge badge-hot">🔥</span>
+    <span class="badge badge-day">Hot</span>
+    
+
+    <img
+      src="https://images.unsplash.com/photo-1601024445121-e5b82f020549?w=500&auto=format&fit=crop&q=60"
+      alt="스카이다이빙"
+    />
+
+    <h2>✨ 성민의 꿈</h2>
+    <p>🪂 1. 스카이다이빙 도전하기</p>
+    <p>✈️ 2. 친구들이랑 일본여행가기</p>
+    <p>🌤️ 3. 다음년도 새해일출보기</p>
+
+    <!-- 비밀 메모 (visibility: hidden → :hover) -->
+    <div class="secret-memo">
+      스카이다이빙은 사실 수술해서 이루지 못하는 꿈
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
