@@ -1,0 +1,97 @@
+/* 1. 카드 전체 스타일 (포스트잇 느낌) */
+.card.leetae-geun {
+    /* width: 300px; */
+    background-color: rgba(204, 255, 0, 0.2);
+    padding: 20px;
+    margin: 40px auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    transform: rotate(-2deg);
+    
+    box-shadow: 
+        0 0 10px rgba(125, 249, 214, 0.5),
+        inset 0 0 15px rgba(125, 249, 214, 0.3); 
+
+    /* 2. 그라데이션 테두리 구현 */
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #7df9d6, #00ffff) 1;
+
+    position: relative; 
+}
+
+.card.leetae-geun:hover {
+  transform: scale(1.03) rotate(0deg);
+  border: 2px solid #c0c0c0;
+  box-shadow: 0 0 10px rgba(125, 249, 214, 0.5);
+  border-image: linear-gradient(45deg, #7df9d6, #00ffff) 1;
+  animation: paper-shake 0.5s infinite;
+}
+
+@keyframes paper-shake {
+  0% {
+    transform: scale(1.03) rotate(0deg);
+  }
+
+  25% {
+    transform: scale(1.03) rotate(0.5deg);
+  }
+
+  50% {
+    transform: scale(1.03) rotate(0deg);
+  }
+
+  75% {
+    transform: scale(1.03) rotate(-0.5deg);
+  }
+
+  100% {
+    transform: scale(1.03) rotate(0deg);
+  }
+}
+
+/* 2. 이미지 스타일 */
+.card.leetae-geun img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 3. 텍스트 스타일 */
+.card.leetae-geun h2 {
+    /* font-size: 1.2rem; */
+    margin: 15px 0;
+}
+
+.card.leetae-geun p {
+    /* font-size: 0.95rem; */
+    margin: 8px 0;
+    color: #333;
+}
+
+/* 4. 배지 스타일 */
+.card.leetae-geun .badge {
+    position: absolute;
+    top: -10px;    
+    right: -10px;  
+    background-color: rgb(251,197,238);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transform: rotate(10deg); 
+}
+
+/* 5. 비밀 메모 스타일 (visibility 실습) */
+.card.leetae-geun .secret-memo {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    /* font-size: 0.8rem; */
+    
+    visibility: hidden; 
+}
+
+.card.leetae-geun:hover .secret-memo {
+    visibility: visible;
+}
