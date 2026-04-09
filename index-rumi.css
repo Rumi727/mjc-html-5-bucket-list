@@ -1,0 +1,51 @@
+/* 기본 카드 디자인 (자유롭게 수정 가능) */
+.rumi.card {
+    text-align: center;
+}
+
+.rumi.card .line {
+    border-top-style: dashed;
+    border-top-width: 0.15em;
+    border-top-color: #00000067;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* 1. 배지 (absolute) 관련 CSS를 작성하세요 */
+.rumi.card .badge#csharp {
+    position: absolute;
+
+    top: -1em;
+    right: -1em;
+
+    rotate: 10deg;
+
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+}
+
+.rumi.card .badge#html5 {
+    position: absolute;
+
+    bottom: -1em;
+    left: -1em;
+
+    rotate: -10deg;
+
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+}
+
+/* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */
+.rumi.card .secret-memo {
+    color: rgb(37, 124, 255);
+
+    opacity: 0;
+    transition: opacity 0.1s linear;
+}
+
+.rumi.card:hover .secret-memo {
+    opacity: 1;
+}
