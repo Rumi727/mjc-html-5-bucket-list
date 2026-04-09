@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -109,3 +110,7 @@
 </body>
 
 </html>
+```
+
+![스크린샷](rumi.md-image.png)
+![호버 스크린샷](rumi.md-image2.png)
