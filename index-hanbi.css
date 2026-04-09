@@ -1,6 +1,6 @@
 /* 기본 카드 디자인 (자유롭게 수정 가능) */
 .card.hanbi {
-    width: 300px;
+    /* width: 300px; */
     margin: 50px auto;
     background: linear-gradient(220deg, #7d09b3, #f0e7a9 75%);
     padding: 15px 15px 35px 15px;
