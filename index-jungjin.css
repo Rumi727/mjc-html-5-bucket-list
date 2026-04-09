@@ -1,0 +1,65 @@
+/* 기본 카드 디자인 */
+.card.jungjin {
+    /* width: 300px; */
+    /* margin: 50px auto; */
+    background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%);
+    padding: 15px 15px 35px 15px;
+    border-radius: 2px 2px 15px 5px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+    /* 배지의 기준점이 되기 위한 필수 속성 */
+    position: relative;
+}
+
+.card.jungjin img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.card.jungjin h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card.jungjin p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* 1. 배지 (absolute) 관련 CSS */
+.card.jungjin .badge {
+    position: absolute;
+    top: -10px;
+    /* 상단에서 -10px만큼 이동 (살짝 튀어나오게) */
+    right: -10px;
+    /* 우측에서 -10px만큼 이동 */
+    background-color: #ff4757;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 2. 비밀 메모 (visibility) 및 hover 효과 */
+.card.jungjin .secret-memo {
+    visibility: hidden;
+    /* 기본 상태: 숨김 */
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #e67e22;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.3s;
+    /* 부드러운 전환 효과 */
+}
+
+/* 카드에 마우스를 올렸을 때 메모가 보이게 설정 */
+.card.jungjin:hover .secret-memo {
+    visibility: visible;
+}

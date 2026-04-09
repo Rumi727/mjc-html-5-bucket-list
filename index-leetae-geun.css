@@ -3,7 +3,7 @@
     /* width: 300px; */
     background-color: rgba(204, 255, 0, 0.2);
     padding: 20px;
-    margin: 40px auto;
+    /* margin: 40px auto; */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     transform: rotate(-2deg);
     
@@ -16,6 +16,8 @@
     border-image: linear-gradient(45deg, #7df9d6, #00ffff) 1;
 
     position: relative; 
+
+    border-radius: 0;
 }
 
 .card.leetae-geun:hover {
