@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        /* 기본 카드 디자인 (자유롭게 수정 가능) */
+        .card {
+            width: 300px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #48fff3 0%, #61ffabd3 100%);
+            padding: 15px 15px 35px 15px;
+            border-radius: 2px 2px 15px 5px;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.477);
+            /* 배지의 기준점이 되기 위한 필수 속성 */
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        :hover {
+            transform: scale(1.05);
+            transition: transform 0.9s;
+            transition: visibility 0.9s;
+        }
+
+        /* 1. 배지 (absolute) 관련 CSS를 작성하세요 */
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: -5px;
+            /* 카드를 살짝 벗어나게 배치하면 더 입체적이에요! */
+            background-color: #fd321b;
+            color: white;
+            /* 가독성을 위해 흰색 추천! */
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transform: rotate(15deg);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */
+        .hidden {
+            visibility: hidden;
+            transition: visibility 0.2s;
+        }
+
+        .card:hover .hidden {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="badge">👽즐겁다 !</div>
+
+
+        <img src="https://www.etri.re.kr/webzine/20230504/img/sub05_01.jpg" alt="런던 사진">
+
+        <h2>✈️​ 승헌이의 꿈</h2>
+        <p>🎆 1. 세계 여행 다니기</p>
+        <p>🌠 2. 걱정 없는 삶 살기</p>
+        <p class="hidden">🤫난 사랑하는 사람이랑 오래 살고 싶어!</p>
+    </div>
+</body>
+
+</html>
